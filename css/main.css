@@ -19,14 +19,24 @@ header {
     z-index: 1001;
 }
 
+#navbar a {
+    color: white; /* 文字色を白に */
+    text-decoration: none; /* 下線を削除 */
+    margin: 0 20px; /* リンク間の距離を調整 */
+    font-size: 18px; /* フォントサイズを少し大きく */
+    padding: 10px 15px; /* クリック範囲を広げる */
+    transition: background-color 0.3s ease; /* ホバー時のアニメーション */
+}
+
 #navvar a:hover {
-    text-decoration: underline;
+    background-color: rgba(255, 255, 255, 0.2); /* 背景を少し明るく */
+    border-radius: 5px; /* 角を丸く */
 }
 
 .section {
     display: block;
     padding: 50px;
-    margin-top: 60px;
+    margin-top: 80px;
     font-size: 20px;
 }
 
