@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     links.forEach(link => {
         link.addEventListener("click", function(event) {
-            event.preventDefault(); //デフォルトの挙動（ページ遷移を防ぐ）
+            event.preventDefault(); // デフォルトの挙動（ページ遷移）を防ぐ
             const targetId = this.getAttribute("data-target") + "-section";
 
             // 全てのセクションを非表示
@@ -15,30 +15,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // クリックされたリンクに対応するセクションを表示
             document.getElementById(targetId).classList.remove("hidden");
+
+            // メニューの色を変更（current クラスを適用）
+            links.forEach(l => l.classList.remove("current")); // すべてのリンクから current を削除
+            this.classList.add("current"); // クリックしたリンクに current を付与
         });
     });
-
-    // 現在地点のリンクを異なる色で表示
-    const updateCurrentSection = () => {
-        let currentSection = "";
-
-        sections.forEach((section) => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-
-            if (window.scrollY >= sectionTop - sectionHeight / 3) {
-                currentSection = section.getAttribute("id");
-            }
-        });
-
-        navLinks.forEach((link) => {
-            link.classList.remove("current"); // すべてのボタンから current を削除
-            if (link.getAttribute("href") === `#${currentSection}`) {
-                link.classList.add("current"); // 現在のコンテンツのボタンに current を付与
-            }
-        });
-    };
-
-    window.addEventListener("scroll", updateCurrentSection);
-    updateCurrentSection(); // ページ読み込み時にも適用
 });

@@ -24,15 +24,15 @@ header {
     text-decoration: none; /* 下線を削除 */
     margin: 0 20px; /* リンク間の距離を調整 */
     font-size: 18px; /* フォントサイズを少し大きく */
+    font-weight: bold;
     padding: 10px 15px; /* クリック範囲を広げる */
     position: relative; /* 疑似要素の基準 */
     transition: background-color 0.3s ease; /* ホバー時のアニメーション */
 }
 
 #navbar a.current {
-    color: blue; /* 現在のページリンクを青色に */
+    color: #a9a9a9; /* 現在のページリンクを青色に */
     font-weight: bold;
-    transition: border-bottom 0.3s ease-in-out; /* なめらかな変化 */
 }
 
 #navvar a:hover {
