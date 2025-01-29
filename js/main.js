@@ -17,4 +17,28 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById(targetId).classList.remove("hidden");
         });
     });
+
+    // 現在地点のリンクを異なる色で表示
+    const updateCurrentSection = () => {
+        let currentSection = "";
+
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+
+            if (window.scrollY >= sectionTop - sectionHeight / 3) {
+                currentSection = section.getAttribute("id");
+            }
+        });
+
+        navLinks.forEach((link) => {
+            link.classList.remove("current"); // すべてのボタンから current を削除
+            if (link.getAttribute("href") === `#${currentSection}`) {
+                link.classList.add("current"); // 現在のコンテンツのボタンに current を付与
+            }
+        });
+    };
+
+    window.addEventListener("scroll", updateCurrentSection);
+    updateCurrentSection(); // ページ読み込み時にも適用
 });
