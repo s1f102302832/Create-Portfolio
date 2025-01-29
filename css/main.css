@@ -19,6 +19,21 @@ header {
     z-index: 1001;
 }
 
+#navvar a:hover {
+    text-decoration: underline;
+}
+
+.section {
+    display: block;
+    padding: 50px;
+    margin-top: 60px;
+    font-size: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
 p {
     padding: 130px 0px;
     height: 500px;
