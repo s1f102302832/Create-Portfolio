@@ -32,6 +32,7 @@ header {
 #navbar a.current {
     color: blue; /* 現在のページリンクを青色に */
     font-weight: bold;
+    transition: border-bottom 0.3s ease-in-out; /* なめらかな変化 */
 }
 
 #navvar a:hover {
