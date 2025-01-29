@@ -25,12 +25,37 @@ header {
     margin: 0 20px; /* リンク間の距離を調整 */
     font-size: 18px; /* フォントサイズを少し大きく */
     padding: 10px 15px; /* クリック範囲を広げる */
+    position: relative; /* 疑似要素の基準 */
     transition: background-color 0.3s ease; /* ホバー時のアニメーション */
+}
+
+#navbar a.current {
+    color: blue; /* 現在のページリンクを青色に */
+    font-weight: bold;
 }
 
 #navvar a:hover {
     background-color: rgba(255, 255, 255, 0.2); /* 背景を少し明るく */
     border-radius: 5px; /* 角を丸く */
+}
+
+/* 下線アニメーション */
+#navbar a::after {
+    content: "";
+    position: absolute;
+    bottom: 0; /* 下線の開始位置をボタン下部に */
+    left: 50%; /* 中央からスタート */
+    width: 0;
+    height: 2px;
+    background-color: white; /* 下線の色 */
+    transition: width 0.3s ease, left 0.3s ease;
+    transform: translateX(-50%);
+}
+
+#navbar a:hover::after {
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .section {
