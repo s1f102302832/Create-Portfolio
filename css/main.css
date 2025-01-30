@@ -59,6 +59,26 @@ header {
     transform: translateX(-50%);
 }
 
+/* currentのボタンの下線の色を変える */
+#navbar a.current::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #a9a9a9;
+    transition: width 0.3s ease, left 0.3s ease;
+    transform: translateX(-50%);
+}
+
+/* ホバー時の下線を中央から広げる */
+#navbar a:hover::after {
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .section {
     display: block;
     padding: 50px;
