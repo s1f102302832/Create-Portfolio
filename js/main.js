@@ -3,6 +3,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const links = document.querySelectorAll(".menu-link");
     const sections = document.querySelectorAll(".section");
 
+    const defaultSectionId = "home-section"; // homeの内容
+     // homeを初期表示するリンクdefaultLinkを定義
+    const defaultLink = document.querySelector(`.menu-link[data-target="home"]`);
+
+    sections.forEach(section => {
+        if (section.id === defaultSectionId) {
+            section.classList.remove("hidden");
+        } else {
+            section.classList.add("hidden");
+        }
+    });
+
+    // 初期表示するボタンに'current'を付与
+    links.forEach(link => link.classList.remove("current"));
+    if (defaultLink) {
+        defaultLink.classList.add("current");
+    }
+
+    // メニューのボタンをクリックしたとき、そのボタンの色を変更する
     links.forEach(link => {
         link.addEventListener("click", function(event) {
             event.preventDefault(); // デフォルトの挙動（ページ遷移）を防ぐ
