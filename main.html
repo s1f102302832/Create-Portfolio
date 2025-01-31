@@ -5,14 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ポートフォリオ</title>
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     </head>
     <body>
         <div id="wrapper">
             <!-- ヘッダー内のタイトルとメニュー -->
             <header id="header">
                 <nav id="navbar">
-                    <a href="#" class="menu-link" data-target="home">home</a>
-                    <a href="#" class="menu-link" data-target="content">Content</a>
+                    <a href="#" class="menu-link" data-target="home">Home</a>
                     <a href="#" class="menu-link" data-target="skills">Skills</a>
                     <a href="#" class="menu-link" data-target="projects">Projects</a>
                     <a href="#" class="menu-link" data-target="contact">Contact</a>
@@ -20,8 +20,14 @@
             </header>
             <!-- 各セクションの内容 -->
             <div id="paragraph">
-                <div id="home-section" class="section">これはhome画面です。</div>
-                <div id="content-section" class="section hidden">これはContentの内容です。</div>
+                <div id="home-section" class="section">
+                    <!-- ここに顔写真 -->
+                    <h1 id="myname">竹本悠人</h1>
+                    <h2 id="engineer">ゲームエンジニア</h2>
+                    <div id="profile">
+                        <p id="policy">ゲームのエンジニアとしてスキルを駆使してユーザーに楽しんでもらえるような体験を提供します。</p>
+                    </div>
+                </div>
                 <div id="skills-section" class="section hidden">これはSkillsの内容です。</div>
                 <div id="projects-section" class="section hidden">これはProjectsの内容です。</div>
                 <div id="contact-section" class="section hidden">これはContactの内容です。</div>
