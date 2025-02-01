@@ -198,10 +198,11 @@ header {
     width: 100%; /* 全幅にして中央寄せを適用 */
 }
 
-#project-name {
-    font-size: 28px;
+#title-project {
+    font-size: 35px;
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-top: -20px;
+    margin-bottom: 40px;
     display: inline-block; /* 中央揃えを確実にする */
     text-align: center;
     width: 100%; /* 全幅にして中央寄せを適用 */
@@ -225,7 +226,7 @@ header {
 }
 
 .project-image {
-    width: 200px; /* 画像の幅を調整 */
+    width: 300px; /* 画像の幅を調整 */
     height: auto;
     border-radius: 5px;
 }
@@ -257,4 +258,12 @@ header {
 
 .project-link:hover {
     background-color: #0056b3;
+}
+
+#title-contact {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: inline-block; /* 中央揃えを確実にする */
+    text-align: center;
+    width: 100%; /* 全幅にして中央寄せを適用 */
 }
