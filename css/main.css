@@ -150,3 +150,33 @@ header {
     display: inline-block;
     padding: 10px;
 }
+
+#language {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: inline-block; /* 中央揃えを確実にする */
+    text-align: center;
+    width: 100%; /* 全幅にして中央寄せを適用 */
+}
+
+#skill-list {
+    width: 70%;
+    max-width: 600px;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 15px; /* 角を丸くする */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 0 auto; /* 中央配置 */
+}
+
+.skill {
+    display: flex; /* 横並びにする */
+    align-items: center; /* アイコンとテキストを縦方向に中央揃え */
+    gap: 10px; /* アイコンと名前の間隔を調整 */
+    margin-bottom: 10px; /* 言語ごとの間隔を空ける */
+}
+
+.skill-icon {
+    width: 80px; /* アイコンの大きさ */
+    height: auto;
+}
