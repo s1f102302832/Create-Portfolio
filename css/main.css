@@ -197,3 +197,12 @@ header {
     text-align: center;
     width: 100%; /* 全幅にして中央寄せを適用 */
 }
+
+#project-name {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: inline-block; /* 中央揃えを確実にする */
+    text-align: center;
+    width: 100%; /* 全幅にして中央寄せを適用 */
+}
