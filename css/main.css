@@ -98,6 +98,7 @@ header {
     }
 }
 
+/* 下からのフェードイン */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -110,19 +111,13 @@ header {
 }
 
 /* アニメーションの適用（デフォルトは非表示状態） */
-.fade-in-right,
+/* 初回表示時のアニメーション */
+.fade-in-right {
+    animation: fadeInRight 0.8s ease-out;
+}
+
 .fade-in-up {
-    opacity: 0; /* 初期状態は見えない */
-    transition: opacity 0.8s ease-out;
-}
-
-/* 表示領域に入ったらアニメーション適用 */
-.fade-in-right.visible {
-    animation: fadeInRight 0.8s ease-out forwards;
-}
-
-.fade-in-up.visible {
-    animation: fadeInUp 0.8s ease-out forwards;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .hidden {
