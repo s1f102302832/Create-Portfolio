@@ -40,4 +40,19 @@ document.addEventListener("DOMContentLoaded", function () {
             this.classList.add("current"); // クリックしたリンクに current を付与
         });
     });
+
+    // スクロール時に要素をフェードインする処理
+    const fadeElements = document.querySelectorAll(".fade-in-section");
+    
+    const fadeInOnScroll = () => {
+        fadeElements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.9) {
+                element.classList.add("fade-in");
+            }
+        });
+    };
+    
+    window.addEventListener("scroll", fadeInOnScroll);
+    fadeInOnScroll(); // 初回チェック
 });
