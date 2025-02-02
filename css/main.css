@@ -88,6 +88,17 @@ header {
     }
 }
 
+@media (max-width: 480px) {
+    #navbar {
+        padding: 15px 3%;  /* 必要に応じてパディングを調整 */
+    }
+    
+    /* メニューリンクの調整 */
+    #navbar a {
+        font-size: 16px;  /* メニューリンクのフォントサイズを小さく */
+    }
+}
+
 .section {
     display: block;
     padding: 50px;
