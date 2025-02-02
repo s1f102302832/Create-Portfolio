@@ -7,13 +7,12 @@ document.addEventListener("DOMContentLoaded", function () {
      // homeを初期表示するリンクdefaultLinkを定義
     const defaultLink = document.querySelector(`.menu-link[data-target="home"]`);
 
+    // 初期表示処理
     sections.forEach(section => {
-        if (section.id === defaultSectionId) {
-            section.classList.remove("hidden");
-        } else {
-            section.classList.add("hidden");
-        }
+        section.classList.add("hidden"); // すべて非表示
     });
+
+    document.getElementById(defaultSectionId).classList.remove("hidden");
 
     // 初期表示するボタンに'current'を付与
     links.forEach(link => link.classList.remove("current"));
@@ -32,8 +31,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 section.classList.add("hidden");
             });
 
-            // クリックされたリンクに対応するセクションを表示
-            document.getElementById(targetId).classList.remove("hidden");
+            // クリックされたセクションを表示し、アニメーションクラスを再適用
+            const targetSection = document.getElementById(targetId);
+            targetSection.classList.remove("hidden");
+
+            // 一旦クラスを削除して再適用（アニメーションをリセット）
+            targetSection.classList.remove("fade-in-right", "fade-in-up");
+            void targetSection.offsetWidth; // 強制的にリフローさせる
+            targetSection.classList.add(targetSection.dataset.animation);
 
             // メニューの色を変更（current クラスを適用）
             links.forEach(l => l.classList.remove("current")); // すべてのリンクから current を削除
