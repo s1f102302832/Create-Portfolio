@@ -111,7 +111,6 @@ header {
 }
 
 /* アニメーションの適用（デフォルトは非表示状態） */
-/* 初回表示時のアニメーション */
 .fade-in-right {
     animation: fadeInRight 0.8s ease-out;
 }
