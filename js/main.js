@@ -35,6 +35,11 @@ document.addEventListener("DOMContentLoaded", function () {
             const targetSection = document.getElementById(targetId);
             targetSection.classList.remove("hidden");
 
+            window.scrollTo({
+                top: 0,
+                behavior: 'auto'
+            })
+
             // 一旦クラスを削除して再適用（アニメーションをリセット）
             targetSection.classList.remove("fade-in-right", "fade-in-up");
             void targetSection.offsetWidth; // 強制的にリフローさせる
