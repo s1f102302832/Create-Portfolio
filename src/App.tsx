@@ -2,6 +2,10 @@ import { useEffect, useState, type CSSProperties } from "react";
 import "./App.css";
 import "./research-lean.css";
 
+// public/配下の画像はGitHub Pagesのサブパス(/Create-Portfolio/)に対応するため
+// import.meta.env.BASE_URL を経由して参照する(vite.config.tsのbaseと連動)
+const asset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+
 type TabId = "home" | "projects" | "research" | "skills";
 
 type NavTab = {
@@ -16,7 +20,7 @@ const navTabs: NavTab[] = [
   { id: "skills", label: "Profile" },
 ];
 
-// 顔写真を使う場合は public/images/profile.jpg などに配置して、下を書き換えてください
+// 顔写真を使う場合は public/images/profile.jpg などに配置して、下を asset("/images/profile.jpg") のように書き換えてください
 const PROFILE_PHOTO_SRC = "";
 
 // 名前が決まったら書き換えてください
@@ -58,8 +62,8 @@ const projects: Project[] = [
     tags: ["React", "TypeScript", "Zustand", "Vite", "Tailwind CSS", "Supabase Auth"],
     theme: "green",
     slides: [
-      "/images/projects/Rooted/BeforeAfter@1x.png",
-      "/images/projects/Rooted/FeatureShowcase@1x.png",
+      asset("/images/projects/Rooted/BeforeAfter@1x.png"),
+      asset("/images/projects/Rooted/FeatureShowcase@1x.png"),
     ],
     url: "",
   },
@@ -72,8 +76,8 @@ const projects: Project[] = [
     tags: ["React", "TypeScript", "Zustand", "Vite", "Tailwind CSS", "Supabase Auth", "Testing Library"],
     theme: "purple",
     slides: [
-      "/images/projects/Combo-LAB/Main@1x.png",
-      "/images/projects/Combo-LAB/FeatureShowcase@1x.png",
+      asset("/images/projects/Combo-LAB/Main@1x.png"),
+      asset("/images/projects/Combo-LAB/FeatureShowcase@1x.png"),
     ],
     url: "",
   },
@@ -88,12 +92,12 @@ type SkillItem = {
 const languageItems: SkillItem[] = [
   {
     name: "Python",
-    icon: "/images/python_icon.png",
+    icon: asset("/images/python_icon.png"),
     alt: "Python Icon",
   },
   {
     name: "JavaScript\nTypeScript",
-    icon: "/images/js_icon.png",
+    icon: asset("/images/js_icon.png"),
     alt: "JavaScript / TypeScript Icon",
   },
 ];
@@ -101,7 +105,7 @@ const languageItems: SkillItem[] = [
 const qualificationItems: SkillItem[] = [
   {
     name: "普通自動車第一種運転免許（AT限定）",
-    icon: "/images/question-mark.jpg",
+    icon: asset("/images/question-mark.jpg"),
     alt: "Qualification Icon",
   },
 ];
