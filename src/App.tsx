@@ -155,12 +155,6 @@ const contactLinks: ContactLink[] = [
     href: "https://github.com/your-name",
     external: true,
   },
-  {
-    label: "Portfolio URL",
-    value: "portfolio.example.com",
-    href: "https://portfolio.example.com",
-    external: true,
-  },
 ];
 
 export default function App() {
