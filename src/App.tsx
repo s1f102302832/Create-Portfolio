@@ -111,7 +111,6 @@ const qualificationItems: SkillItem[] = [
 ];
 
 type EsHighlight = {
-  badge: string;
   title: string;
   genreLabel: string;
   genres: string[];
@@ -122,7 +121,6 @@ type EsHighlight = {
 };
 
 const esHighlight: EsHighlight = {
-  badge: "🎮 ES Episode",
   title: "好きなゲーム・影響を受けた体験",
   genreLabel: "普段プレイするゲームジャンル",
   genres: ["FPS", "格闘ゲーム", "RPG", "アクション"],
@@ -677,8 +675,6 @@ function SkillsSection() {
       role="tabpanel"
       aria-labelledby="skills-tab"
     >
-      <h1 className="profile-title">プロフィール</h1>
-
       <div className="skills-grid">
         <EsHighlightCard highlight={esHighlight} />
         <SkillGroup title="使用言語" items={languageItems} layout="row" />
@@ -718,7 +714,6 @@ function SkillGroup({
 function EsHighlightCard({ highlight }: { highlight: EsHighlight }) {
   return (
     <article className="skill-card skill-card--wide es-card">
-      <span className="es-badge">{highlight.badge}</span>
       <h2>{highlight.title}</h2>
 
       <div className="es-block">

@@ -573,28 +573,21 @@ a {
 ========================= */
 
 .skills-panel {
-  padding-top: clamp(16px, 2.6vw, 28px);
-  padding-bottom: clamp(16px, 2.6vw, 28px);
+  padding-top: 14px;
+  padding-bottom: 14px;
   display: flex;
   flex-direction: column;
-  gap: clamp(12px, 1.8vw, 18px);
-}
-
-.profile-title {
-  margin: 0;
-  color: var(--text);
-  font-size: 2.2rem;
-  font-weight: 800;
+  gap: 10px;
 }
 
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(12px, 1.8vw, 18px);
+  gap: 10px;
 }
 
 .skill-card {
-  padding: clamp(14px, 2vw, 20px);
+  padding: 14px;
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   background: #ffffff;
@@ -611,8 +604,8 @@ a {
 
 .skill-list {
   display: grid;
-  gap: 8px;
-  margin-top: 12px;
+  gap: 6px;
+  margin-top: 8px;
 }
 
 .skill-list--row {
@@ -622,15 +615,15 @@ a {
 .skill-item {
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding: 8px 10px;
+  gap: 12px;
+  padding: 6px 10px;
   border-radius: 16px;
   background: #f8fafc;
 }
 
 .skill-icon {
-  width: 42px;
-  height: 42px;
+  width: 34px;
+  height: 34px;
   flex: 0 0 auto;
   object-fit: contain;
 }
@@ -651,26 +644,15 @@ a {
   border-color: rgba(37, 99, 235, 0.35);
 }
 
-.es-badge {
-  display: inline-block;
-  padding: 4px 12px;
-  border-radius: 999px;
-  background: rgba(37, 99, 235, 0.12);
-  color: var(--accent-dark);
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-}
-
 .es-card h2 {
-  margin-top: 8px;
+  margin-top: 0;
 }
 
 .es-block {
-  margin-top: 10px;
+  margin-top: 6px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
 }
 
 .es-block-label {
@@ -696,21 +678,21 @@ a {
 }
 
 .es-subtitle {
-  margin-top: 12px;
+  margin-top: 6px;
   color: var(--accent);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 700;
 }
 
 .es-paragraph {
-  margin-top: 8px;
+  margin-top: 3px;
   color: var(--text);
-  font-size: 0.92rem;
-  line-height: 1.6;
+  font-size: 0.86rem;
+  line-height: 1.35;
 }
 
 .contact-area {
-  padding: clamp(14px, 2.2vw, 22px);
+  padding: 14px;
   border-radius: var(--radius-lg);
   background:
     radial-gradient(circle at top right, rgba(37, 99, 235, 0.42), transparent 34%),
@@ -730,21 +712,21 @@ a {
 
 .contact-area p {
   color: rgba(255, 255, 255, 0.75);
-  font-size: 0.92rem;
-  line-height: 1.6;
+  font-size: 0.86rem;
+  line-height: 1.4;
 }
 
 .contact-links {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-  margin-top: 14px;
+  gap: 8px;
+  margin-top: 10px;
 }
 
 .contact-link {
   display: grid;
-  gap: 4px;
-  padding: 10px 12px;
+  gap: 2px;
+  padding: 8px 12px;
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.08);
