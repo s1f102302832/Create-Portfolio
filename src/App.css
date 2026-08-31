@@ -246,12 +246,13 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
+  gap: 4px;
 }
 
 .profile-photo-frame {
   width: min(260px, 28vw);
   aspect-ratio: 1;
+  margin-bottom: 10px;
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -573,11 +574,15 @@ a {
 ========================= */
 
 .skills-panel {
-  padding-top: 14px;
-  padding-bottom: 14px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 4px;
+}
+
+.skills-panel .section-heading {
+  margin-bottom: 0;
 }
 
 .skills-grid {
@@ -587,7 +592,7 @@ a {
 }
 
 .skill-card {
-  padding: 14px;
+  padding: 12px;
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   background: #ffffff;
@@ -692,7 +697,7 @@ a {
 }
 
 .contact-area {
-  padding: 14px;
+  padding: 12px;
   border-radius: var(--radius-lg);
   background:
     radial-gradient(circle at top right, rgba(37, 99, 235, 0.42), transparent 34%),
@@ -813,7 +818,7 @@ a {
   }
 
   .profile-name {
-    font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+    font-size: 1.5rem;
   }
 
   .home-text h1 {

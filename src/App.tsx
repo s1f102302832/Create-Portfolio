@@ -20,11 +20,9 @@ const navTabs: NavTab[] = [
   { id: "skills", label: "Profile" },
 ];
 
-// 顔写真を使う場合は public/images/profile.jpg などに配置して、下を asset("/images/profile.jpg") のように書き換えてください
-const PROFILE_PHOTO_SRC = "";
+const PROFILE_PHOTO_SRC = asset("/images/face-icon.png");
 
-// 名前が決まったら書き換えてください
-const PROFILE_NAME = "Your Name";
+const PROFILE_NAME = "竹本悠人";
 
 type HomeStat = {
   label: string;
@@ -675,6 +673,11 @@ function SkillsSection() {
       role="tabpanel"
       aria-labelledby="skills-tab"
     >
+      <div className="section-heading">
+        <p className="section-kicker">Profile</p>
+        <h1>プロフィール</h1>
+      </div>
+
       <div className="skills-grid">
         <EsHighlightCard highlight={esHighlight} />
         <SkillGroup title="使用言語" items={languageItems} layout="row" />
