@@ -63,7 +63,7 @@ const projects: Project[] = [
       asset("/images/projects/Rooted/BeforeAfter@1x.png"),
       asset("/images/projects/Rooted/FeatureShowcase@1x.png"),
     ],
-    url: "",
+    url: "https://yuto-boobam.github.io/Rooted/",
   },
   {
     title: "コンボラボ",
@@ -77,7 +77,7 @@ const projects: Project[] = [
       asset("/images/projects/Combo-LAB/Main@1x.png"),
       asset("/images/projects/Combo-LAB/FeatureShowcase@1x.png"),
     ],
-    url: "",
+    url: "https://yuto-boobam.github.io/Combo-LAB/",
   },
 ];
 
@@ -142,13 +142,13 @@ type ContactLink = {
 const contactLinks: ContactLink[] = [
   {
     label: "Email",
-    value: "your-address@example.com",
-    href: "mailto:your-address@example.com",
+    value: "koppepan0716@gmail.com",
+    href: "mailto:koppepan0716@gmail.com",
   },
   {
     label: "GitHub",
-    value: "github.com/your-name",
-    href: "https://github.com/your-name",
+    value: "github.com/yuto-boobam",
+    href: "https://github.com/yuto-boobam",
     external: true,
   },
 ];
@@ -758,10 +758,6 @@ function ContactArea() {
       <div>
         <p className="section-kicker">Contact</p>
         <h2 id="contact-title">連絡先</h2>
-        <p>
-          メールアドレスやGitHubなどをここに配置します。
-          個人情報を載せる場合は、公開範囲に注意してください。
-        </p>
       </div>
 
       <div className="contact-links">
