@@ -30,9 +30,9 @@ type HomeStat = {
 };
 
 const homeStats: HomeStat[] = [
-  { label: "性格", value: "一つずつ検証してから前に進む、コツコツ積み上げ型" },
-  { label: "得意なこと", value: "現状に満足せず、ユーザー目線で改善を形にする推進力" },
-  { label: "好きなこと", value: "RPGの物語没入 / FPS・格闘ゲームで息抜き" },
+  { label: "性格", value: "一つずつ検証して進む、コツコツ積み上げ型" },
+  { label: "得意なこと", value: "現状に満足せず改善を形にする推進力" },
+  { label: "好きなこと", value: "RPG没入・FPS・格ゲー" },
   { label: "よく使う言語", value: "Python / TypeScript" },
 ];
 
@@ -48,6 +48,8 @@ type Project = {
   slides: string[];
   // サイトが公開でき次第、URLを入れてください（空文字なら準備中として表示）
   url: string;
+  // ソースコードのGitHubリポジトリURL
+  repoUrl: string;
 };
 
 const projects: Project[] = [
@@ -64,6 +66,7 @@ const projects: Project[] = [
       asset("/images/projects/Rooted/FeatureShowcase@1x.png"),
     ],
     url: "https://yuto-boobam.github.io/Rooted/",
+    repoUrl: "https://github.com/yuto-boobam/Rooted",
   },
   {
     title: "コンボラボ",
@@ -78,6 +81,7 @@ const projects: Project[] = [
       asset("/images/projects/Combo-LAB/FeatureShowcase@1x.png"),
     ],
     url: "https://yuto-boobam.github.io/Combo-LAB/",
+    repoUrl: "https://github.com/yuto-boobam/Combo-LAB",
   },
 ];
 
@@ -245,14 +249,22 @@ function HomeSection({ onViewProjects }: { onViewProjects: () => void }) {
           <p className="section-kicker">About Me</p>
           <h1>厳密さも遊び心も大事にするエンジニアです。</h1>
 
-          <ul className="home-stats">
-            {homeStats.map((stat) => (
-              <li key={stat.label}>
-                <span className="home-stat-label">{stat.label}</span>
-                <span>{stat.value}</span>
-              </li>
-            ))}
-          </ul>
+          <div className="home-terminal">
+            <div className="home-terminal-dots" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div className="home-terminal-body">
+              {homeStats.map((stat) => (
+                <p className="home-terminal-line" key={stat.label}>
+                  <span className="home-terminal-prompt">$</span>{" "}
+                  <span className="home-terminal-key">{stat.label}</span>{" "}
+                  <span className="home-terminal-value">{stat.value}</span>
+                </p>
+              ))}
+            </div>
+          </div>
 
           <button type="button" className="primary-button" onClick={onViewProjects}>
             作品を見る
@@ -341,28 +353,32 @@ function ProjectCard({
           <button type="button" className="project-detail-button" onClick={onOpenDetail}>
             詳細を見る
           </button>
-          <ProjectSiteLink url={project.url} />
+          <div className="project-links">
+            <ProjectLink url={project.repoUrl} label="コードを見る" pendingLabel="コード準備中" />
+            <ProjectLink url={project.url} label="サイトを見る" pendingLabel="サイトURL準備中" />
+          </div>
         </div>
       </div>
     </article>
   );
 }
 
-function ProjectSiteLink({ url }: { url: string }) {
+function ProjectLink({
+  url,
+  label,
+  pendingLabel,
+}: {
+  url: string;
+  label: string;
+  pendingLabel: string;
+}) {
   if (!url) {
-    return (
-      <span className="project-site-link project-site-link--pending">サイトURL準備中</span>
-    );
+    return <span className="project-site-link project-site-link--pending">{pendingLabel}</span>;
   }
 
   return (
-    <a
-      className="project-site-link"
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      サイトを見る
+    <a className="project-site-link" href={url} target="_blank" rel="noopener noreferrer">
+      {label}
     </a>
   );
 }
