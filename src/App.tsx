@@ -32,7 +32,7 @@ type HomeStat = {
 const homeStats: HomeStat[] = [
   { label: "性格", value: "一つずつ検証して進む、コツコツ積み上げ型" },
   { label: "得意なこと", value: "現状に満足せず改善を形にする推進力" },
-  { label: "好きなこと", value: "RPG没入・FPS・格ゲー" },
+  { label: "好きなこと", value: "RPG・FPS・格ゲー" },
   { label: "よく使う言語", value: "Python / TypeScript" },
 ];
 
@@ -107,8 +107,8 @@ const languageItems: SkillItem[] = [
 const qualificationItems: SkillItem[] = [
   {
     name: "普通自動車第一種運転免許（AT限定）",
-    icon: asset("/images/question-mark.jpg"),
-    alt: "Qualification Icon",
+    icon: "🚗",
+    alt: "普通自動車第一種運転免許",
   },
 ];
 
@@ -146,8 +146,8 @@ type ContactLink = {
 const contactLinks: ContactLink[] = [
   {
     label: "Email",
-    value: "koppepan0716@gmail.com",
-    href: "mailto:koppepan0716@gmail.com",
+    value: "bubamug@gmail.com",
+    href: "mailto:bubamug@gmail.com",
   },
   {
     label: "GitHub",
@@ -721,8 +721,14 @@ function SkillGroup({
       <div className={`skill-list${layout === "row" ? " skill-list--row" : ""}`}>
         {items.map((item) => (
           <div key={item.name} className="skill-item">
-            <img src={item.icon} alt={item.alt} className="skill-icon" />
-            <span>{item.name}</span>
+            {item.icon.includes("/") ? (
+              <img src={item.icon} alt={item.alt} className="skill-icon" />
+            ) : (
+              <span className="skill-icon skill-icon--emoji" aria-hidden="true">
+                {item.icon}
+              </span>
+            )}
+            <span className="skill-name">{item.name}</span>
           </div>
         ))}
       </div>
